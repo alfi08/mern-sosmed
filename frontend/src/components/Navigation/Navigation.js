@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import {
   Flex,
   Heading,
@@ -26,9 +27,11 @@ const Navigation = () => {
     >
       <Container maxW="90%">
         <Flex alignItems="center" justifyContent="space-between">
-          <Heading as="h1" fontWeight="400" cursor="pointer">
-            StalkMe
-          </Heading>
+          <NavLink to="/">
+            <Heading as="h1" fontWeight="400" cursor="pointer">
+              StalkMe
+            </Heading>
+          </NavLink>
 
           {/* search input */}
           <Box px="30px">
@@ -57,7 +60,9 @@ const Navigation = () => {
 
             {/* Inbox menu */}
             <Box mr="15px" height="2.5rem" lineHeight="2.5rem" cursor="pointer">
-              <Icon as={BsEnvelope} fontSize="25px" />
+              <NavLink to="/inbox">
+                <Icon as={BsEnvelope} fontSize="25px" />
+              </NavLink>
             </Box>
             {/* end Inbox menu */}
 
@@ -71,7 +76,9 @@ const Navigation = () => {
                 />
               }
             >
-              <MenuItem>Profile</MenuItem>
+              <NavLink to="/profile">
+                <MenuItem>Profile</MenuItem>
+              </NavLink>
               <MenuItem>New Post</MenuItem>
               <MenuItem>Logout</MenuItem>
             </NavMenu>

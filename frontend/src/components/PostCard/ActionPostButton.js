@@ -9,6 +9,7 @@ const ActionPostButton = (props) => {
       _focus={{ bg: "transparent" }}
       fontSize="23px"
       onClick={props.onClick}
+      px="1px"
     >
       {props.children}
     </Button>

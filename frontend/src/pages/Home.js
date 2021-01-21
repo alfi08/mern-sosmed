@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
+import PostCard from "../components/PostCard/PostCard";
+
+import { POSTS_DUMMY } from "../DB";
 
 const Home = () => {
   return (
-    <div>
-      <h1>Home</h1>
-    </div>
-  )
-}
+    <>
+      {POSTS_DUMMY.map((post) => (
+        <PostCard {...post} key={post.username} />
+      ))}
+    </>
+  );
+};
 
-export default Home
+export default Home;

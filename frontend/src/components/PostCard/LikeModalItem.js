@@ -1,6 +1,6 @@
 import React from "react";
 import { Flex, Link, Button } from "@chakra-ui/react";
-import PicProfile from "./PicProfile";
+import PicProfile from "../UI/PicProfile";
 
 const LikeModalItem = (props) => {
   return (

@@ -5,9 +5,10 @@ import { BsFillHeartFill, BsHeart } from "react-icons/bs";
 
 import ActionButton from "./ActionPostButton";
 import PicProfile from "../UI/PicProfile";
-import LikeModal from "./LikeModal";
+import LikeModalItem from "./LikeModalItem";
 import PostCardModal from "./PostCardModal";
 import Comments from "./Comments";
+import AddComment from "./AddComment";
 
 import defaultPostImg from "../../assets/img/post.png";
 
@@ -21,7 +22,6 @@ const PostCardHome = (props) => {
 
   useEffect(() => {
     setIsLiked(props.isLiked);
-    console.log(props);
   }, [props.isLiked]);
 
   return (
@@ -48,6 +48,7 @@ const PostCardHome = (props) => {
             </Link>
           </Box>
         </Flex>
+        {/* end post header */}
 
         {/* post image */}
         <Box>
@@ -58,6 +59,8 @@ const PostCardHome = (props) => {
             alt="Woman paying for a purchase"
           />
         </Box>
+        {/* end post image */}
+
         {/* post actions */}
         <Flex py="1">
           {/* like button */}
@@ -77,11 +80,22 @@ const PostCardHome = (props) => {
             <Icon as={MdSend} />
           </ActionButton>
         </Flex>
+        {/* end post actions */}
         <hr />
+
         {/* post body */}
         <Box p="2">
-          <LikeModal>{props.like} likes</LikeModal> {/* likes list button  */}
-          <Text marginBottom="15px">
+          <PostCardModal title="Likes" text={`${props.like.length} likes`}>
+            {props.like.map((like) => (
+              <LikeModalItem
+                key={like.username}
+                username={like.username}
+                profileImage={like.profileImage}
+                isFollow={props.isFollow}
+              />
+            ))}
+          </PostCardModal>
+          <Text marginBottom="10px">
             {/* username */}
             <Link fontSize="md" fontWeight="semibold" href="#" mr="10px">
               {props.username}
@@ -89,10 +103,19 @@ const PostCardHome = (props) => {
             {/* post description */}
             {props.description}
           </Text>
-          {/* post commment */}
-          <PostCardModal title="Comments" text={`view all 300 comments`}>
-            <Comments />
+          {/*  commment list */}
+          <PostCardModal
+            title="Comments"
+            text={`view all ${props.comment.length} comments`}
+            padding="15px"
+          >
+            <Comments comments={props.comment} />
           </PostCardModal>
+          {/* end  commment list */}
+          <hr />
+          {/* post comment */}
+          <AddComment />
+          {/* end post comment */}
         </Box>
         {/* end post body */}
       </Box>

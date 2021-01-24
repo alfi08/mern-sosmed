@@ -6,7 +6,7 @@ const LikeModalItem = (props) => {
   return (
     <Flex justifyContent="space-between" my="15px">
       <Flex alignItems="center">
-        <PicProfile src="https://picsum.photos/id/1003/367/267" />
+        <PicProfile src="https://picsum.photos/id/1003/367/267" size="40px" />
         <Link ml="10px">{props.username || "alfi08"}</Link>
       </Flex>
 

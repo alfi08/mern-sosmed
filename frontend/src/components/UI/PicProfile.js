@@ -5,7 +5,7 @@ import DefaultImageProfile from "../../assets/img/default.webp";
 const PicProfile = (props) => {
   return (
     <Image
-      src={DefaultImageProfile}
+      src={props.src || DefaultImageProfile}
       w={props.size || "30px"}
       h={props.size || "30px"}
       borderRadius="50%"

@@ -22,7 +22,11 @@ const PostCardModal = (props) => {
         <ModalContent>
           <ModalHeader textAlign="center">{props.title}</ModalHeader>
           <ModalCloseButton />
-          <ModalBody borderTop="1px" borderColor="#ddd">
+          <ModalBody
+            borderTop="1px"
+            borderColor="#ddd"
+            padding={props.padding || ""}
+          >
             {props.children}
           </ModalBody>
         </ModalContent>

@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Box, Link, Text, Image, Center, Flex, Icon } from "@chakra-ui/react";
-import { MdSend, MdChat } from "react-icons/md";
-import { BsFillHeartFill, BsHeart } from "react-icons/bs";
+import { Box, Center } from "@chakra-ui/react";
 
-import ActionButton from "./ActionPostButton";
-import PicProfile from "../UI/PicProfile";
-import LikeModalItem from "./LikeModalItem";
-import PostCardModal from "./PostCardModal";
-import Comments from "./Comments";
-import AddComment from "./AddComment";
-
-import defaultPostImg from "../../assets/img/post.png";
+import PostHeader from "./PostHeader";
+import PostImage from "./PostImage";
+import PostActions from "./PostActions";
+import PostBody from "./PostBody";
 
 const PostCardHome = (props) => {
   const [isLiked, setIsLiked] = useState(false);
@@ -28,95 +22,28 @@ const PostCardHome = (props) => {
     <Center>
       <Box
         boxShadow="sm"
-        w={{ md: "50%" }}
+        w={{ md: "650px", sm: "85%" }}
         my="5"
         border="1px"
         borderColor="#ddd"
       >
-        {/* post header */}
-        <Flex p="10px" alignItems="center">
-          <PicProfile src={props.profileImage} />
-          <Box pl="13px">
-            {" "}
-            <Link
-              fontWeight="bold"
-              textTransform="uppercase"
-              fontSize="sm"
-              letterSpacing="wide"
-            >
-              {props.username}
-            </Link>
-          </Box>
-        </Flex>
-        {/* end post header */}
+        <PostHeader src={props.profileImage} username={props.username} />
 
         {/* post image */}
-        <Box>
-          <Image
-            src={props.postImage || defaultPostImg}
-            w="100%"
-            maxH="400px"
-            alt="Woman paying for a purchase"
-          />
-        </Box>
-        {/* end post image */}
+        <PostImage src={props.postImage} />
 
         {/* post actions */}
-        <Flex py="1">
-          {/* like button */}
-          <ActionButton onClick={likeToggleHandler}>
-            <Icon
-              as={isLiked ? BsFillHeartFill : BsHeart}
-              color={isLiked && "#f00"}
-            />
-          </ActionButton>
-          {/* comment button */}
-          <ActionButton mx="1">
-            {/* <ChatIcon /> */}
-            <Icon as={MdChat} />
-            {/* send button */}
-          </ActionButton>
-          <ActionButton>
-            <Icon as={MdSend} />
-          </ActionButton>
-        </Flex>
-        {/* end post actions */}
+        <PostActions likeHandler={likeToggleHandler} isLiked={isLiked} />
         <hr />
 
         {/* post body */}
-        <Box p="2">
-          <PostCardModal title="Likes" text={`${props.like.length} likes`}>
-            {props.like.map((like) => (
-              <LikeModalItem
-                key={like.username}
-                username={like.username}
-                profileImage={like.profileImage}
-                isFollow={props.isFollow}
-              />
-            ))}
-          </PostCardModal>
-          <Text marginBottom="10px">
-            {/* username */}
-            <Link fontSize="md" fontWeight="semibold" href="#" mr="10px">
-              {props.username}
-            </Link>
-            {/* post description */}
-            {props.description}
-          </Text>
-          {/*  commment list */}
-          <PostCardModal
-            title="Comments"
-            text={`view all ${props.comment.length} comments`}
-            padding="15px"
-          >
-            <Comments comments={props.comment} />
-          </PostCardModal>
-          {/* end  commment list */}
-          <hr />
-          {/* post comment */}
-          <AddComment />
-          {/* end post comment */}
-        </Box>
+        <PostBody
+          like={props.like}
+          isFollow={props.isFollow}
+          username={props.username}
+          description={props.description}
+          comment={props.comment}
+        />
         {/* end post body */}
       </Box>
     </Center>

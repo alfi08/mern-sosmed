@@ -17,11 +17,16 @@ const PostCardModal = (props) => {
         {props.text}
       </Link>
 
-      <Modal isOpen={isOpen} onClose={onClose}>
+      <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader textAlign="center">{props.title}</ModalHeader>
-          <ModalCloseButton />
+          {props.title && (
+            <>
+              <ModalHeader textAlign="center">{props.title}</ModalHeader>
+              <ModalCloseButton />
+            </>
+          )}
+
           <ModalBody
             borderTop="1px"
             borderColor="#ddd"

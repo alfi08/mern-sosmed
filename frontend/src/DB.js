@@ -3,7 +3,7 @@ export const POSTS_DUMMY = [
     username: "alfi08",
     fullName: "alfi sahri",
     profileImage: "https://picsum.photos/id/1/367/267",
-    postImage: "https://picsum.photos/id/1011/500/500",
+    postImage: "https://picsum.photos/id/1011/1000/1000",
     description:
       "Getting a new business off the ground is a lot of hard work. Here are five ideas you can use to find your first customqweqwasdaers.",
     like: [
@@ -27,8 +27,7 @@ export const POSTS_DUMMY = [
       { username: "alfi08", body: "ini adalah komen bro!!" },
       {
         username: "kled",
-        body:
-          "jika bukan karena aku sangat sayang padamu, mana mungkin aku ingin mengorbankan semuanya hanya untukmu!!",
+        body: "untukmu!!",
       },
       { username: "garen", body: " demacia!!" },
     ],
@@ -62,8 +61,7 @@ export const POSTS_DUMMY = [
       { username: "alfi08", body: "ini adalah komen bro!!" },
       {
         username: "kled",
-        body:
-          "jika bukan karena aku sangat sayang padamu, mana mungkin aku ingin mengorbankan semuanya hanya untukmu!!",
+        body: "untukmu!!",
       },
       { username: "garen", body: " demacia!!" },
     ],
@@ -97,8 +95,7 @@ export const POSTS_DUMMY = [
       { username: "alfi08", body: "ini adalah komen bro!!" },
       {
         username: "kled",
-        body:
-          "jika bukan karena aku sangat sayang padamu, mana mungkin aku ingin mengorbankan semuanya hanya untukmu!!",
+        body: "untukmu!!",
       },
       { username: "garen", body: " demacia!!" },
     ],
@@ -132,8 +129,7 @@ export const POSTS_DUMMY = [
       { username: "alfi08", body: "ini adalah komen bro!!" },
       {
         username: "kled",
-        body:
-          "jika bukan karena aku sangat sayang padamu, mana mungkin aku ingin mengorbankan semuanya hanya untukmu!!",
+        body: "untukmu!!",
       },
       { username: "garen", body: " demacia!!" },
     ],

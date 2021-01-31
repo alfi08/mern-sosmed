@@ -15,7 +15,7 @@ function App() {
       <Router>
         <Navigation />
         <Switch>
-          <Route path="/post/:postid">
+          <Route path="/p/:postid">
             <PostDetail />
           </Route>
           <Route path="/profile">

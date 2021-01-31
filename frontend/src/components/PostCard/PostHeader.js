@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Link, Flex, Icon, Button } from "@chakra-ui/react";
+import { Box, Link, Flex, Icon } from "@chakra-ui/react";
 import { BsThreeDots } from "react-icons/bs";
 
 import PicProfile from "../UI/PicProfile";
@@ -32,7 +32,6 @@ const PostHeader = (props) => {
       >
         {["Report", "Unfollow", "Copy Link"].map((text) => (
           <Box
-            color
             key={text}
             textAlign="center"
             borderBottom="1px"

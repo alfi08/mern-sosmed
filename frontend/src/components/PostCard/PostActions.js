@@ -5,7 +5,7 @@ import { BsFillHeartFill, BsHeart } from "react-icons/bs";
 import { FiSend } from "react-icons/fi";
 import { FaRegComment } from "react-icons/fa";
 
-import LikeModalItem from "./LikeModalItem";
+import UserThumbItem from "../UI/UserThumbItem";
 import PostCardModal from "./PostCardModal";
 import ActionButton from "./ActionPostButton";
 
@@ -37,10 +37,11 @@ const PostActions = (props) => {
         </ActionButton>
       </Flex>
 
+      {/* list of user who love this post  */}
       <Box px="10px">
         <PostCardModal title="Likes" text={`${props.like.length} likes`}>
           {props.like.map((like) => (
-            <LikeModalItem
+            <UserThumbItem
               key={like.username}
               username={like.username}
               profileImage={like.profileImage}

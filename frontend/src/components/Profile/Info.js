@@ -5,20 +5,37 @@ import { BsThreeDots } from "react-icons/bs";
 import ProfileButton from "./ProfileButton";
 import FollowModal from "./FollowModal";
 import UserThumbItem from "../UI/UserThumbItem";
+import PostCardModal from "../PostCard/PostCardModal";
 
 const Info = () => {
   return (
     <>
       {/* info header */}
       <Flex alignItems="center">
+        {/* username */}
         <Heading mr="15px">Alfi08</Heading>
+
         {/* action header */}
         <ProfileButton bg="blue.400" color="#fff">
           Follow
         </ProfileButton>
-        <ProfileButton>
-          <Icon as={BsThreeDots} />
-        </ProfileButton>
+
+        <PostCardModal text={<Icon as={BsThreeDots} />} padding="1px">
+          {["Report User", "Block this User"].map((text) => (
+            <Box
+              key={text}
+              textAlign="center"
+              borderBottom="1px"
+              color="gray.600"
+              borderColor="gray.300"
+              fontWeight="500"
+              py="10px"
+              cursor="pointer"
+            >
+              {text}
+            </Box>
+          ))}
+        </PostCardModal>
       </Flex>
 
       {/* info follow */}

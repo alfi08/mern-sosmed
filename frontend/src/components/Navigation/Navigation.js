@@ -15,6 +15,7 @@ import { BsHeart, BsEnvelope, BsSearch } from "react-icons/bs";
 import MenuItem from "./MenuItem";
 import PicProfil from "../UI/PicProfile";
 import NavMenu from "./NavMenu";
+import NotificationItems from "./NotificationItems";
 
 const Navigation = () => {
   return (
@@ -52,9 +53,7 @@ const Navigation = () => {
           <Flex justifyContent="center">
             {/* Notification menu */}
             <NavMenu icon={BsHeart}>
-              <MenuItem>Nanti di sayang sama dia!</MenuItem>
-              <MenuItem>Nanti di sayang sama dia!</MenuItem>
-              <MenuItem>Nanti di sayang sama dia!</MenuItem>
+              <NotificationItems />
             </NavMenu>
             {/* end Notification menu */}
 
@@ -79,7 +78,9 @@ const Navigation = () => {
               <NavLink to="/profile">
                 <MenuItem>Profile</MenuItem>
               </NavLink>
-              <MenuItem>New Post</MenuItem>
+              <NavLink to="/newpost">
+                <MenuItem>New Post</MenuItem>
+              </NavLink>
               <MenuItem>Logout</MenuItem>
             </NavMenu>
           </Flex>

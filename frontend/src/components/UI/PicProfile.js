@@ -9,7 +9,7 @@ const PicProfile = (props) => {
       w={props.size || "30px"}
       h={props.size || "30px"}
       borderRadius="50%"
-      marginTop={props.marginTop || ""}
+      marginTop={props.marginTop || "0"}
       alt={props.alt || "untitle"}
     />
   );

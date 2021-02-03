@@ -10,7 +10,7 @@ const NavMenu = (props) => {
         <MenuButton>
           {props.icon ? <Icon as={props.icon} fontSize="25px" /> : props.btn}
         </MenuButton>
-        <MenuList bg="#0E2431" borderColor="#533E2D">
+        <MenuList bg="#0E2431" borderColor="#533E2D" width="350px">
           {props.children}
         </MenuList>
       </Menu>

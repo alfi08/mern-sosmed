@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import PostDetail from "./pages/PostDetail";
 import Profile from "./pages/Profile";
+import NewPost from "./pages/NewPost";
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
           </Route>
           <Route path="/profile">
             <Profile />
+          </Route>
+          <Route path="/NewPost">
+            <NewPost />
           </Route>
           <Route path="/inbox">
             <Inbox />

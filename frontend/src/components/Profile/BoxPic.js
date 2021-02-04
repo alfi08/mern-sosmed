@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Modal,
   ModalOverlay,
@@ -10,19 +10,25 @@ import {
   Box,
 } from "@chakra-ui/react";
 
+import { useHistory } from "react-router-dom";
+
 const BoxPic = (props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [isHover, setIsHover] = useState(false);
+  const history = useHistory();
 
   const hoverHandlre = (hover) => {
     setIsHover(hover);
   };
 
+  const clickHandle = () => {
+    history.push("/p/12");
+  };
+
   return (
     <>
       <Link
-        onClick={props.isUseModal ? onOpen : ""}
-        href={!props.isUseModal && "http://localhost:3000/p/12"}
+        onClick={props.isUseModal ? onOpen : clickHandle} // if view is for desktop then open modal, if mobile open to url with useHistory()
         style={{ color: "black" }}
         _hover={{ textDecor: "none" }}
         mr={props.mr || "30px"}

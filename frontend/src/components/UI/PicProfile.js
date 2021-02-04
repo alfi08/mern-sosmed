@@ -9,8 +9,10 @@ const PicProfile = (props) => {
       w={props.size || "30px"}
       h={props.size || "30px"}
       borderRadius="50%"
+      margin={props.margin}
       marginTop={props.marginTop || "0"}
       alt={props.alt || "untitle"}
+      textAlign={props.textAlign}
     />
   );
 };

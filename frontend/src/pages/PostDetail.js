@@ -8,10 +8,13 @@ const PostDetail = () => {
   return (
     <Center>
       <Box w="900px" mt="20px">
+        {/* for desktop view */}
         <PostCardDetail
           {...POSTS_DUMMY[0]}
           display={{ base: "none", lg: "flex" }}
         />
+
+        {/* for mobile view */}
         <PostCard
           {...POSTS_DUMMY[0]}
           display={{ base: "block", lg: "none" }}

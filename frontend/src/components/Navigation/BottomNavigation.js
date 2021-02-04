@@ -1,28 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import {
-  Flex,
-  Heading,
-  Box,
-  Container,
-  InputGroup,
-  Input,
-  InputRightElement,
-  Icon,
-} from "@chakra-ui/react";
-import { BsHeart, BsEnvelope, BsSearch } from "react-icons/bs";
+import { Flex, Box } from "@chakra-ui/react";
+import { BsHeart, BsEnvelope, BsSearch, BsHouse } from "react-icons/bs";
 
-import MenuItem from "./MenuItem";
 import PicProfil from "../UI/PicProfile";
-import NavMenu from "./NavMenu";
-import NotificationItems from "./NotificationItems";
+import MenuBottom from "./MenuBottom";
 
 const BottomNavigation = () => {
   return (
     <Box
       bg="#393e46"
       color="#FAF4D0"
-      py="4"
       borderTop="1px"
       borderColor="gray.200"
       w="100%"
@@ -30,9 +18,23 @@ const BottomNavigation = () => {
       bottom="0"
       overflow="hidden"
       zIndex="9999"
-      display={{ base: "none", md: "none" }}
+      display={{ base: "block", md: "none" }}
     >
-      <Flex></Flex>
+      <Flex justifyContent="space-around">
+        <MenuBottom icon={BsHouse} />
+        <MenuBottom icon={BsSearch} />
+        <MenuBottom icon={BsHeart} />
+        <MenuBottom icon={BsEnvelope} />
+        <MenuBottom
+          btn={
+            <PicProfil
+              src="https://picsum.photos/id/646/367/267"
+              size="35px"
+              margin="auto"
+            />
+          }
+        />
+      </Flex>
     </Box>
   );
 };

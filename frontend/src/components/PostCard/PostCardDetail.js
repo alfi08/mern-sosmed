@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Box, Center, Flex } from "@chakra-ui/react";
+import React, { useState } from "react";
+import { Box, Flex } from "@chakra-ui/react";
 
 import PostHeader from "./PostHeader";
 import PostImage from "./PostImage";
@@ -7,8 +7,6 @@ import PostActions from "./PostActions";
 import PostBody from "./PostBody";
 import Comments from "./Comments";
 import AddComment from "./AddComment";
-
-import { POSTS_DUMMY } from "../../DB";
 
 const PostCardDetail = (props) => {
   const [isLiked, setIsLiked] = useState(false);

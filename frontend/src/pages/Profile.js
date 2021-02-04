@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Box, Flex, Container } from "@chakra-ui/react";
 
 import PicProfile from "../components/UI/PicProfile";
@@ -14,12 +14,11 @@ import { POSTS_DUMMY } from "../DB";
 
 const Profile = () => {
   const [choiceMenu, setChoiceMenu] = useState("post"); // 3 opsi => post || tag || save
-  const [screenWidth, setScreenWidth] = useState(0);
   const choiceMenuHandler = (choice) => {
     setChoiceMenu(choice);
   };
 
-  const { height, width } = useWindowDimensions();
+  const { width } = useWindowDimensions();
 
   return (
     <Container maxW={{ base: "100%", lg: "75%" }} mt="50px">

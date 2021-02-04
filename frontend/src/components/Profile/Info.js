@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Box, Heading, Icon, Link } from "@chakra-ui/react";
+import { Flex, Box, Heading, Icon } from "@chakra-ui/react";
 import { BsThreeDots } from "react-icons/bs";
 
 import ProfileButton from "./ProfileButton";

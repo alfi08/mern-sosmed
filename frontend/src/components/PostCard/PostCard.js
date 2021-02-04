@@ -26,9 +26,10 @@ const PostCardHome = (props) => {
       <Box
         boxShadow="sm"
         w={{ md: "650px", sm: "85%" }}
-        my="5"
+        my={props.my || "5"}
         border="1px"
         borderColor="#ddd"
+        display={props.display}
       >
         <PostHeader src={props.profileImage} username={props.username} />
 

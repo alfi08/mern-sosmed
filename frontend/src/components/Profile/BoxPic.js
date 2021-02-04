@@ -21,17 +21,18 @@ const BoxPic = (props) => {
   return (
     <>
       <Link
-        onClick={onOpen}
+        onClick={props.isUseModal ? onOpen : ""}
+        href={!props.isUseModal && "http://localhost:3000/p/12"}
         style={{ color: "black" }}
         _hover={{ textDecor: "none" }}
         mr={props.mr || "30px"}
         mb={props.mr || "0"}
         w="32%"
-        h="293px"
+        h={{ base: "200px", md: "293px" }}
       >
         <Box position="relative" w="100%" h="100%">
           <Img
-            src="https://picsum.photos/500"
+            src={props.src}
             w="100%"
             h="100%"
             onMouseOver={() => hoverHandlre(true)}

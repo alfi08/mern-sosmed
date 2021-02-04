@@ -6,6 +6,7 @@ import ProfileButton from "./ProfileButton";
 import FollowModal from "./FollowModal";
 import UserThumbItem from "../UI/UserThumbItem";
 import PostCardModal from "../PostCard/PostCardModal";
+import InfoBody from "./InfoBody";
 
 const Info = () => {
   return (
@@ -13,7 +14,13 @@ const Info = () => {
       {/* info header */}
       <Flex alignItems="center">
         {/* username */}
-        <Heading mr="15px">Alfi08</Heading>
+        <Heading
+          mr="15px"
+          fontSize={{ base: "22px", lg: "35px" }}
+          ml={{ base: "20px", sm: "5px" }}
+        >
+          Alfi08
+        </Heading>
 
         {/* action header */}
         <ProfileButton bg="blue.400" color="#fff">
@@ -40,8 +47,12 @@ const Info = () => {
 
       {/* info follow */}
       <Flex my="20px">
-        <Box mr="30px">
-          <span style={{ fontWeight: "bold" }}>21</span>post
+        <Box
+          mr={{ base: "15px", lg: "30px" }}
+          fontSize={{ base: "20px", lg: "17px" }}
+          textAlign="center"
+        >
+          <span style={{ fontWeight: "bold" }}>21</span> post
         </Box>
 
         {/* followers */}
@@ -60,23 +71,7 @@ const Info = () => {
       </Flex>
 
       {/* info body */}
-      <Box>
-        {/* name */}
-        <Box fontSize="23px" fontWeight="bold">
-          ALfi Sahri
-        </Box>
-
-        {/* description */}
-        <Box>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere non
-          oui ex, dolorum et? Nulla, explicabo.
-        </Box>
-
-        {/* website */}
-        <Link href="dev.to" fontWeight="bold" fontSize="17px" color="blue.600">
-          dev.to
-        </Link>
-      </Box>
+      <InfoBody display={{ base: "none", md: "block" }} />
     </>
   );
 };

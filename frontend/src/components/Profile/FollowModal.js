@@ -15,7 +15,9 @@ const PostCardModal = (props) => {
         onClick={onOpen}
         style={{ color: "black" }}
         _hover={{ textDecor: "none" }}
-        mr="30px"
+        mr={{ base: "15px", lg: "30px" }}
+        fontSize={{ base: "20px", lg: "17px" }}
+        textAlign="center"
       >
         <span style={{ fontWeight: "bold" }}>{props.count}</span> {props.text}
       </Link>

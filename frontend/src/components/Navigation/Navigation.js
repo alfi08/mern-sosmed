@@ -27,7 +27,11 @@ const Navigation = () => {
       borderColor="gray.200"
     >
       <Container maxW="90%">
-        <Flex alignItems="center" justifyContent="space-between">
+        <Flex
+          alignItems="center"
+          justifyContent={{ base: "center", md: "space-between" }}
+        >
+          {/* logo */}
           <NavLink to="/">
             <Heading as="h1" fontWeight="400" cursor="pointer">
               StalkMe
@@ -35,7 +39,7 @@ const Navigation = () => {
           </NavLink>
 
           {/* search input */}
-          <Box px="30px">
+          <Box px="30px" display={{ base: "none", md: "block" }}>
             <InputGroup>
               <Input
                 placeholder="Cari.."
@@ -50,7 +54,8 @@ const Navigation = () => {
             </InputGroup>
           </Box>
 
-          <Flex justifyContent="center">
+          {/* right menu */}
+          <Flex justifyContent="center" display={{ base: "none", md: "flex" }}>
             {/* Notification menu */}
             <NavMenu icon={BsHeart}>
               <NotificationItems />

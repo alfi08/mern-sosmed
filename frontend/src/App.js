@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Navigation from "./components/Navigation/Navigation";
+import BottomNavigation from "./components/Navigation/BottomNavigation";
 import Home from "./pages/Home";
 import Inbox from "./pages/Inbox";
 import Login from "./pages/Login";
@@ -12,9 +13,10 @@ import NewPost from "./pages/NewPost";
 
 function App() {
   return (
-    <>
+    <div>
       <Router>
         <Navigation />
+        <BottomNavigation />
         <Switch>
           <Route path="/p/:postid">
             <PostDetail />
@@ -39,7 +41,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-    </>
+    </div>
   );
 }
 

@@ -12,37 +12,36 @@ import { POSTS_DUMMY } from "../../DB";
 
 const PostCardDetail = (props) => {
   const [isLiked, setIsLiked] = useState(false);
-  const [post, setPost] = useState(false);
 
   const likeToggleHandler = () => {
     setIsLiked(!isLiked);
   };
 
-  useEffect(() => {
-    setPost(POSTS_DUMMY[0]);
-    setIsLiked(post.isLiked);
-  }, [post]);
-
   return (
-    post && (
-      <Flex w="100%" border="1px" borderColor="gray.300">
+    props && (
+      <Flex
+        w="100%"
+        border="1px"
+        borderColor="gray.300"
+        display={props.display || "flex"}
+      >
         {/* image */}
 
         <Box>
-          <PostImage src={post.postImage} />
+          <PostImage src={props.postImage} />
         </Box>
         <Flex w="600px" flexDirection="column" justifyContent="space-between">
           <Box>
-            <PostHeader src={post.profileImage} username={post.username} />
+            <PostHeader src={props.profileImage} username={props.username} />
             <Box px="10px" overflow="auto" height="280px">
               <PostBody
-                isFollow={post.isFollow}
-                username={post.username}
-                description={post.description}
-                comment={post.comment}
+                isFollow={props.isFollow}
+                username={props.username}
+                description={props.description}
+                comment={props.comment}
               />
 
-              <Comments comments={post.comment} />
+              <Comments comments={props.comment} />
             </Box>
           </Box>
 
@@ -50,7 +49,7 @@ const PostCardDetail = (props) => {
             <PostActions
               likeHandler={likeToggleHandler}
               isLiked={isLiked}
-              like={post.like}
+              like={props.like}
             />
             <AddComment />
           </Box>

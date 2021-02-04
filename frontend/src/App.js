@@ -10,6 +10,8 @@ import Register from "./pages/Register";
 import PostDetail from "./pages/PostDetail";
 import Profile from "./pages/Profile";
 import NewPost from "./pages/NewPost";
+import Search from "./pages/Search";
+import Notification from "./pages/Notification";
 
 function App() {
   return (
@@ -24,8 +26,14 @@ function App() {
           <Route path="/profile">
             <Profile />
           </Route>
-          <Route path="/NewPost">
+          <Route path="/newpost">
             <NewPost />
+          </Route>
+          <Route path="/search">
+            <Search />
+          </Route>
+          <Route path="/notification">
+            <Notification />
           </Route>
           <Route path="/inbox">
             <Inbox />

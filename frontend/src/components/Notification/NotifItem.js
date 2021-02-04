@@ -27,7 +27,13 @@ const NotifItem = (props) => {
         </Flex>
 
         {/* notif body */}
-        <Box p="5px 10px" bg="blue.500" borderRadius="10px" mt="10px">
+        <Box
+          p="5px 10px"
+          bg="blue.500"
+          borderRadius="10px"
+          mt="10px"
+          color="#fff"
+        >
           Follow
         </Box>
       </Flex>

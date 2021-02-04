@@ -1,21 +1,14 @@
 import { NavLink } from "react-router-dom";
-import {
-  Flex,
-  Heading,
-  Box,
-  Container,
-  InputGroup,
-  Input,
-  InputRightElement,
-  Icon,
-} from "@chakra-ui/react";
+import { Flex, Heading, Box, Container, Icon } from "@chakra-ui/react";
 import React from "react";
-import { BsHeart, BsEnvelope, BsSearch } from "react-icons/bs";
+import { BsHeart, BsEnvelope } from "react-icons/bs";
+import { AiOutlineCamera } from "react-icons/ai";
 
 import MenuItem from "./MenuItem";
 import PicProfil from "../UI/PicProfile";
 import NavMenu from "./NavMenu";
-import NotificationItems from "./NotificationItems";
+import NotificationItems from "../Notification/NotificationItems";
+import InputSearch from "../UI/InputSearch";
 
 const Navigation = () => {
   return (
@@ -27,32 +20,28 @@ const Navigation = () => {
       borderColor="gray.200"
     >
       <Container maxW="90%">
-        <Flex
-          alignItems="center"
-          justifyContent={{ base: "center", md: "space-between" }}
-        >
+        <Flex alignItems="center" justifyContent="space-between">
           {/* logo */}
+          <Box display={{ base: "block", md: "none" }}>
+            <NavLink to="/new-story">
+              <Icon as={AiOutlineCamera} fontSize="30px" />
+            </NavLink>
+          </Box>
+
           <NavLink to="/">
             <Heading as="h1" fontWeight="400" cursor="pointer">
               StalkMe
             </Heading>
           </NavLink>
 
-          {/* search input */}
-          <Box px="30px" display={{ base: "none", md: "block" }}>
-            <InputGroup>
-              <Input
-                placeholder="Cari.."
-                height="35px"
-                borderColor="#171717"
-                _focus={{ borderColor: "#171717" }}
-                _hover={{ borderColor: "#171717" }}
-              />
-              <InputRightElement
-                children={<BsSearch color="#171717" fontSize="15px" />}
-              />
-            </InputGroup>
+          <Box display={{ base: "block", md: "none" }}>
+            <NavLink to="/inbox">
+              <Icon as={BsEnvelope} fontSize="30px" />
+            </NavLink>
           </Box>
+
+          {/* search input */}
+          <InputSearch display={{ base: "none", md: "block" }} />
 
           {/* right menu */}
           <Flex justifyContent="center" display={{ base: "none", md: "flex" }}>

@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { Flex, Box } from "@chakra-ui/react";
-import { BsHeart, BsEnvelope, BsSearch, BsHouse } from "react-icons/bs";
+import { BsHeart, BsPlusSquare, BsSearch, BsHouse } from "react-icons/bs";
 
 import PicProfil from "../UI/PicProfile";
 import MenuBottom from "./MenuBottom";
@@ -21,19 +21,30 @@ const BottomNavigation = () => {
       display={{ base: "block", md: "none" }}
     >
       <Flex justifyContent="space-around">
-        <MenuBottom icon={BsHouse} />
-        <MenuBottom icon={BsSearch} />
-        <MenuBottom icon={BsHeart} />
-        <MenuBottom icon={BsEnvelope} />
-        <MenuBottom
-          btn={
-            <PicProfil
-              src="https://picsum.photos/id/646/367/267"
-              size="35px"
-              margin="auto"
-            />
-          }
-        />
+        <NavLink to="/">
+          <MenuBottom icon={BsHouse} />
+        </NavLink>
+
+        <NavLink to="/search">
+          <MenuBottom icon={BsSearch} />{" "}
+        </NavLink>
+        <NavLink to="/NewPost">
+          <MenuBottom icon={BsPlusSquare} border="1px" />{" "}
+        </NavLink>
+        <NavLink to="/notification">
+          <MenuBottom icon={BsHeart} />{" "}
+        </NavLink>
+        <NavLink to="/profile">
+          <MenuBottom
+            btn={
+              <PicProfil
+                src="https://picsum.photos/id/646/367/267"
+                size="35px"
+                margin="auto"
+              />
+            }
+          />
+        </NavLink>
       </Flex>
     </Box>
   );

@@ -1,6 +1,7 @@
 import React from "react";
 import { Flex, Box, Icon } from "@chakra-ui/react";
 import { BsInfoCircle } from "react-icons/bs";
+import PicProfile from "../UI/PicProfile";
 
 const MessageHeader = (props) => {
   return (
@@ -12,7 +13,12 @@ const MessageHeader = (props) => {
       alignItems="center"
       px="20px"
     >
-      <Box fontWeight="bold">{props.username} </Box>
+      <Flex>
+        <PicProfile />
+        <Box fontWeight="bold" ml="10px">
+          {props.username}{" "}
+        </Box>
+      </Flex>
       <Box>
         <Icon as={BsInfoCircle} fontSize="25px" />
       </Box>

@@ -6,7 +6,7 @@ import useWindowDimensions from "../hooks/useWindowDimensions";
 const Inbox = () => {
   const { width: deviceScreen } = useWindowDimensions();
 
-  return deviceScreen > 768 ? <InboxDesktopView /> : <InboxMobileView />;
+  return deviceScreen >= 768 ? <InboxDesktopView /> : <InboxMobileView />;
 };
 
 export default Inbox;

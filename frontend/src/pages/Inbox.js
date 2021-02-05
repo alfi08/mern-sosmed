@@ -1,11 +1,12 @@
 import React from "react";
+import InboxDesktopView from "../components/Inbox/InboxDesktopView";
+import InboxMobileView from "../components/Inbox/InboxMobileView";
+import useWindowDimensions from "../hooks/useWindowDimensions";
 
 const Inbox = () => {
-  return (
-    <div>
-      <h1 style={{ textAlign: "center", marginTop: "100px" }}>on proggress!</h1>
-    </div>
-  );
+  const { width: deviceScreen } = useWindowDimensions();
+
+  return deviceScreen > 768 ? <InboxDesktopView /> : <InboxMobileView />;
 };
 
 export default Inbox;

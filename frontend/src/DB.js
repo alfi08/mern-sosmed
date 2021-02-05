@@ -142,3 +142,71 @@ export const USER_DUMMY = {
   username: "alfi08",
   fullname: "alfi sahri",
 };
+
+export const CHAT_DUMMY = [
+  {
+    username: "akali",
+    message: [
+      { from: "HIM", body: "semangat fi ♥" },
+      { from: "ME", body: "waduh makin semangat aja ni ♥" },
+      { from: "HIM", body: "jaga kesehatan ya fi ♥" },
+      { from: "HIM", body: "jaga kesehatan ya fi ♥" },
+      { from: "HIM", body: "jaga kesehatan ya fi ♥" },
+      { from: "HIM", body: "jaga kesehatan ya fi ♥" },
+      { from: "HIM", body: "jaga kesehatan ya fi ♥" },
+      { from: "HIM", body: "jaga kesehatan ya fi ♥" },
+      { from: "HIM", body: "jaga kesehatan ya fi ♥" },
+      { from: "HIM", body: "jaga kesehatan ya fi ♥" },
+      { from: "HIM", body: "jaga kesehatan ya fi ♥" },
+      { from: "HIM", body: "jaga kesehatan ya fi ♥" },
+      { from: "HIM", body: "jaga kesehatan ya fi ♥" },
+      {
+        from: "HIM",
+        body:
+          "jaga kesehatan ya fi ♥jaga kesehatan ya fi ♥jaga kesehatan ya fi ♥jaga kesehatan ya fi ♥jaga kesehatan ya fi ♥jaga kesehatan ya fi ♥jaga kesehatan ya fi ♥jaga kesehatan ya fi ♥jaga kesehatan ya fi ♥jaga kesehatan ya fi ♥jaga kesehatan ya fi ♥jaga kesehatan ya fi ♥jaga kesehatan ya fi ♥jaga kesehatan ya fi ♥",
+      },
+    ],
+  },
+  {
+    username: "shaco",
+    message: [
+      { from: "HIM", body: "jokes on you" },
+      { from: "ME", body: "ye ye yea" },
+    ],
+  },
+  {
+    username: "lux",
+    message: [
+      { from: "HIM", body: "stay positive" },
+      { from: "ME", body: "yes my grace" },
+    ],
+  },
+  {
+    username: "garen",
+    message: [
+      { from: "HIM", body: "for DEMACIA!! " },
+      { from: "ME", body: "f0R d3M4c1A" },
+    ],
+  },
+  {
+    username: "ryze",
+    message: [
+      { from: "HIM", body: "u wanna help?" },
+      { from: "ME", body: "oke, get out right?" },
+    ],
+  },
+  {
+    username: "jarvan",
+    message: [
+      { from: "HIM", body: "where my dragon?" },
+      { from: "ME", body: "dk man" },
+    ],
+  },
+  {
+    username: "draven",
+    message: [
+      { from: "HIM", body: "welcome!" },
+      { from: "ME", body: "on the league of draven!!!" },
+    ],
+  },
+];

@@ -6,7 +6,7 @@ import MenuButton from "./MenuButton";
 const NavMenu = (props) => {
   return (
     <Box mr={props.mr || "15px"}>
-      <Menu placement="top">
+      <Menu>
         <MenuButton>
           {props.icon ? <Icon as={props.icon} fontSize="25px" /> : props.btn}
         </MenuButton>

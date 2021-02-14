@@ -2,7 +2,6 @@ import React from "react";
 import {
   Box,
   Button,
-  Center,
   Heading,
   Input,
   Textarea,
@@ -10,7 +9,7 @@ import {
 
 const NewPost = () => {
   return (
-    <Center mt="100px">
+    <Box d="flex" justifyContent="center" >
       <Box boxShadow="dark-lg" p="20px">
         <form>
           <Heading size="md" textAlign="center">
@@ -23,7 +22,7 @@ const NewPost = () => {
           </Button>
         </form>
       </Box>
-    </Center>
+    </Box>
   );
 };
 

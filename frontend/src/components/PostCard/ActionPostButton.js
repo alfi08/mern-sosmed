@@ -10,6 +10,7 @@ const ActionPostButton = (props) => {
       fontSize="23px"
       onClick={props.onClick}
       px="1px"
+      height={props.height}
     >
       {props.children}
     </Button>

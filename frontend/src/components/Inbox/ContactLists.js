@@ -1,11 +1,11 @@
-import React, { useState, useCallback } from "react";
+import React from "react";
 import { Box } from "@chakra-ui/react";
 
 import ContactList from "./ContactList";
 
 const ContactLists = (props) => {
   return (
-    <Box overflow="auto" maxH="400px">
+    <Box overflow="auto" maxH={props.maxH || "400px"} mb={props.mb}  >
       {props.chats.map((msg, i) => (
         <ContactList
           key={i}

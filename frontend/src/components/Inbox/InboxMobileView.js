@@ -14,13 +14,15 @@ const InboxMobileView = () => {
 
   return selectMsg ? (
     <Box minH="100vh" position="relative">
-      <Message chat={selectMsg} />
+      <Message chat={selectMsg} selectMsgHandler={selectMsgHandler}/>
     </Box>
   ) : (
     <ContactLists
       onClick={selectMsgHandler}
       chats={chats}
       selectedMsg={selectMsg}
+      maxH="100vh"
+      mb="50px"
     />
   );
 };

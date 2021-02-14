@@ -15,7 +15,7 @@ import Notification from "./pages/Notification";
 
 function App() {
   return (
-    <div>
+    <>
       <Router>
         <Navigation />
         <BottomNavigation />
@@ -49,7 +49,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-    </div>
+    </>
   );
 }
 

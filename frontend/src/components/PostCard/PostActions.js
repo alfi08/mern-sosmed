@@ -1,6 +1,6 @@
 import React from "react";
 import { Flex, Icon, Box } from "@chakra-ui/react";
-import { MdBookmarkBorder } from "react-icons/md";
+import { MdBookmarkBorder,  MdBookmark } from "react-icons/md";
 import { BsFillHeartFill, BsHeart } from "react-icons/bs";
 import { FiSend } from "react-icons/fi";
 import { FaRegComment } from "react-icons/fa";
@@ -10,6 +10,7 @@ import PostCardModal from "./PostCardModal";
 import ActionButton from "./ActionPostButton";
 
 const PostActions = (props) => {
+
   return (
     <>
       <Flex justifyContent="space-between">
@@ -22,7 +23,7 @@ const PostActions = (props) => {
             />
           </ActionButton>
           {/* comment button */}
-          <ActionButton mx="1">
+          <ActionButton mx="1" onClick={props.cursorToCommentHandler}>
             {/* <ChatIcon /> */}
             <Icon as={FaRegComment} />
             {/* send button */}
@@ -31,9 +32,9 @@ const PostActions = (props) => {
             <Icon as={FiSend} />
           </ActionButton>
         </Flex>
-
-        <ActionButton>
-          <Icon as={MdBookmarkBorder} />
+        {/* saved button */}
+        <ActionButton onClick={props.saveHandler}>
+          <Icon as={props.saved ? MdBookmark :MdBookmarkBorder} />
         </ActionButton>
       </Flex>
 

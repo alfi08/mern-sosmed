@@ -1,9 +1,11 @@
 import React from "react";
 import { Link, Text } from "@chakra-ui/react";
+import Comments from "./Comments";
 
 const PostBody = (props) => {
+
   return (
-    <div>
+    <>
       <Text marginBottom="10px">
         {/* username */}
         <Link fontSize="md" fontWeight="semibold" href="#" mr="10px">
@@ -12,7 +14,9 @@ const PostBody = (props) => {
         {/* post description */}
         {props.description}
       </Text>
-    </div>
+
+      <Comments comments={props.comments} limit="2" />
+    </>
   );
 };
 

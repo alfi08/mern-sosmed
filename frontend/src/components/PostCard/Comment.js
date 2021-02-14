@@ -13,7 +13,7 @@ const Comment = (props) => {
   };
 
   return (
-    <Flex mb="10px" justifyContent="space-between">
+    <Flex justifyContent="space-between" alignItems="center">
       <Box>
         <Link mr="15px" fontWeight="bold">
           {props.username || "alfi08"}
@@ -21,7 +21,7 @@ const Comment = (props) => {
         {props.body}
       </Box>
       <Box>
-        <ActionButton onClick={likeHandler}>
+        <ActionButton onClick={likeHandler} height="10px"> 
           <Icon
             as={isLiked ? BsFillHeartFill : BsHeart}
             color={isLiked && "#f00"}

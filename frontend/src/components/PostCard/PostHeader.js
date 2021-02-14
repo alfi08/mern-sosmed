@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, Link, Flex, Icon } from "@chakra-ui/react";
+import {Link} from "react-router-dom";
+import { Box, Flex, Icon } from "@chakra-ui/react";
 import { BsThreeDots } from "react-icons/bs";
 
 import PicProfile from "../UI/PicProfile";
@@ -11,13 +12,16 @@ const PostHeader = (props) => {
     <Flex p="10px" alignItems="center" justifyContent="space-between">
       <Flex>
         <PicProfile src={props.profileImage} />
-        <Box pl="13px">
-          <Link
-            fontWeight="bold"
-            textTransform="uppercase"
-            fontSize="sm"
-            letterSpacing="wide"
-          >
+        <Box
+          fontWeight="bold"
+          textTransform="uppercase"
+          fontSize="sm"
+          letterSpacing="wide"
+          pl="13px"
+          d="flex"
+          alignItems="center"
+        >
+          <Link to="profile">
             {props.username}
           </Link>
         </Box>

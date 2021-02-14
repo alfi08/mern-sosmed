@@ -10,6 +10,7 @@ const PostImage = (props) => {
       w={props.width || "100%"}
       h={props.height || "100%"}
       alt="Woman paying for a purchase"
+      onDoubleClick={props.likeHandler}
     />
   );
 };

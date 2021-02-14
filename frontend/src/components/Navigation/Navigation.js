@@ -47,7 +47,9 @@ const Navigation = () => {
           <Flex justifyContent="center" display={{ base: "none", md: "flex" }}>
             {/* Notification menu */}
             <NavMenu icon={BsHeart}>
-              <NotificationItems />
+              <Box h="350px" overflow="auto">
+                <NotificationItems />
+              </Box>
             </NavMenu>
             {/* end Notification menu */}
 

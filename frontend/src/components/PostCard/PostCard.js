@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Box, Center } from "@chakra-ui/react";
 
 import PostHeader from "./PostHeader";
@@ -11,11 +11,20 @@ import AddComment from "./AddComment";
 
 const PostCardHome = (props) => {
   const [isLiked, setIsLiked] = useState(false);
+  const [saved, setSaved] = useState(false)
+  const cursorCommentRef = useRef();
 
   const likeToggleHandler = () => {
-    console.log("cek");
     setIsLiked(!isLiked);
   };
+
+  const saveHandler = () =>{
+    setSaved(!saved);
+  }
+
+  const cursorToCommentHandler = () => {
+    cursorCommentRef.current.focus();
+  }
 
   useEffect(() => {
     setIsLiked(props.isLiked);
@@ -35,14 +44,17 @@ const PostCardHome = (props) => {
 
         {/* post image */}
         <Box h="500px">
-          <PostImage src={props.postImage} />
+          <PostImage src={props.postImage} likeHandler={likeToggleHandler} />
         </Box>
 
         {/* post actions */}
         <PostActions
           likeHandler={likeToggleHandler}
+          cursorToCommentHandler={cursorToCommentHandler}
           isLiked={isLiked}
           like={props.like}
+          saveHandler={saveHandler}
+          saved={saved}
         />
 
         <Box px="10px">
@@ -51,7 +63,7 @@ const PostCardHome = (props) => {
             isFollow={props.isFollow}
             username={props.username}
             description={props.description}
-            comment={props.comment}
+            comments={props.comment}
           />
           {/* end post body */}
 
@@ -67,7 +79,7 @@ const PostCardHome = (props) => {
           <hr />
         </Box>
         {/* post comment */}
-        <AddComment />
+        <AddComment cursorCommentRef={cursorCommentRef} />
         {/* end post comment */}
       </Box>
     </Center>

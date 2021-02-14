@@ -16,7 +16,7 @@ const InboxDesktopView = () => {
   );
 
   return (
-    <Container maxW="80%" mt="20px">
+    <Box w="80%" margin="20px auto">
       <Flex
         border="1px"
         borderColor="#8e8e8e"
@@ -44,7 +44,7 @@ const InboxDesktopView = () => {
           <Message chat={chats[selectedMsg]} />
         </Box>
       </Flex>
-    </Container>
+    </Box>
   );
 };
 

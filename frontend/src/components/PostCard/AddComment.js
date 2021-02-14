@@ -1,10 +1,10 @@
 import React from "react";
 import { Input, Button, InputGroup, InputRightElement } from "@chakra-ui/react";
 
-const AddComment = () => {
+const AddComment = (props) => {
   return (
     <InputGroup size="sm">
-      <Input variant="flushed" placeholder="Add Comment" p="10px" />
+      <Input variant="flushed" placeholder="Add Comment" p="10px" ref={props.cursorCommentRef} />
       <InputRightElement width="4.5rem">
         <Button
           size="sm"

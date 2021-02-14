@@ -149,22 +149,6 @@ export const CHAT_DUMMY = [
     message: [
       { from: "HIM", body: "semangat fi ♥" },
       { from: "ME", body: "waduh makin semangat aja ni ♥" },
-      { from: "HIM", body: "jaga kesehatan ya fi ♥" },
-      { from: "HIM", body: "jaga kesehatan ya fi ♥" },
-      { from: "HIM", body: "jaga kesehatan ya fi ♥" },
-      { from: "HIM", body: "jaga kesehatan ya fi ♥" },
-      { from: "HIM", body: "jaga kesehatan ya fi ♥" },
-      { from: "HIM", body: "jaga kesehatan ya fi ♥" },
-      { from: "HIM", body: "jaga kesehatan ya fi ♥" },
-      { from: "HIM", body: "jaga kesehatan ya fi ♥" },
-      { from: "HIM", body: "jaga kesehatan ya fi ♥" },
-      { from: "HIM", body: "jaga kesehatan ya fi ♥" },
-      { from: "HIM", body: "jaga kesehatan ya fi ♥" },
-      {
-        from: "HIM",
-        body:
-          "jaga kesehatan ya fi ♥jaga kesehatan ya fi ♥jaga kesehatan ya fi ♥jaga kesehatan ya fi ♥jaga kesehatan ya fi ♥jaga kesehatan ya fi ♥jaga kesehatan ya fi ♥jaga kesehatan ya fi ♥jaga kesehatan ya fi ♥jaga kesehatan ya fi ♥jaga kesehatan ya fi ♥jaga kesehatan ya fi ♥jaga kesehatan ya fi ♥jaga kesehatan ya fi ♥",
-      },
     ],
   },
   {

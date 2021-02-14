@@ -5,7 +5,7 @@ import NotifItem from "./NotifItem";
 const NotificationItems = (props) => {
   return (
     <>
-      {[1, 2].map((item, i) => (
+      {[1, 2,3,4,5,6,7,8,9,10,11,12,13].map((item, i) => (
         <NotifItem
           key={item}
           border={i !== 0 ? "1px" : "0"}

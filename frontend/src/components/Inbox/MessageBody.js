@@ -4,7 +4,7 @@ import { Box, Flex } from "@chakra-ui/react";
 const MessageBody = (props) => {
   console.log(props);
   return (
-    <Box maxH="360px" minH="360px" overflow="auto" paddingBottom="10px">
+    <Box h="360px" overflow="auto" paddingBottom="10px">
       {props.messages.map((msg, i) => (
         <Flex
           justifyContent={msg.from === "ME" ? "flex-end" : "flex-start"}

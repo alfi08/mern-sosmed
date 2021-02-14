@@ -31,6 +31,7 @@ const PostCardModal = (props) => {
             borderTop="1px"
             borderColor="#ddd"
             padding={props.padding || ""}
+            onClick={onClose}
           >
             {props.children}
           </ModalBody>

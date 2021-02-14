@@ -11,7 +11,7 @@ const PicProfile = (props) => {
       borderRadius="50%"
       margin={props.margin}
       marginTop={props.marginTop || "0"}
-      alt={props.alt || "untitle"}
+      alt={props.alt || ""}
       textAlign={props.textAlign}
     />
   );

@@ -9,7 +9,7 @@ import {
 
 const NewPost = () => {
   return (
-    <Box d="flex" justifyContent="center" >
+    <Box d="flex" justifyContent="center" mt="100px">
       <Box boxShadow="dark-lg" p="20px">
         <form>
           <Heading size="md" textAlign="center">

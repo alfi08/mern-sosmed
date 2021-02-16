@@ -1,14 +1,18 @@
 const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-
 const User = require("../models/User");
 const createToken = require("../utils/createToken");
+const errorHandler = require("../utils/errorHandler");
 
 module.exports = {
   // auto login
   autoLogin: async (req, res) => {
-    const doc = await User.findById(req.user.id).select("-password");
-    res.json(doc);
+    try {
+      const doc = await User.findById(req.user.id).select("-password");
+      res.json(doc);
+    } catch (err) {
+      const errors = errorHandler(err);
+      res.status(400).json({ errors });
+    }
   },
 
   // sign in
@@ -23,6 +27,13 @@ module.exports = {
           .json({ status: "FAILED", message: "Check Your Fields!" });
       }
 
+      const userData = await User.findOne({ username: username });
+      if (!userData)
+        return res.status(400).json({
+          status: "FAILED",
+          message: "username or password is invalid",
+        });
+
       // check if password is match
       const isPasswordMatch = await bcrypt.compare(password, userData.password);
       if (!isPasswordMatch)
@@ -33,12 +44,13 @@ module.exports = {
 
       const token = createToken({ id: userData._id });
       res.json({
-        message: "login success ",
+        message: "login success",
         user: { username: userData.username, id: userData._id },
         token,
       });
     } catch (err) {
-      throw err;
+      const errors = errorHandler(err);
+      res.status(400).json({ errors });
     }
   },
 
@@ -64,7 +76,8 @@ module.exports = {
       const token = createToken({ id: newUser._id });
       res.json({ message: "register success ", id: newUser._id, token });
     } catch (err) {
-      throw err;
+      const errors = errorHandler(err);
+      res.status(400).json({ errors });
     }
   },
 
@@ -86,8 +99,11 @@ module.exports = {
         return res
           .status(400)
           .json({ status: "FAILED", message: `${msg} is already exist` });
+
+      res.json({ status: "SUCCESS" });
     } catch (err) {
-      throw err;
+      const errors = errorHandler(err);
+      res.status(400).json({ errors });
     }
   },
 };

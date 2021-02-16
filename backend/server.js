@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const morgan = require("morgan");
+const helmet = require("helmet");
 
 const app = express();
 const port = 5000;
@@ -14,7 +15,7 @@ mongoose
   })
   .then((success) => {
     console.log("mongodb connected");
-    app.listen(port, console.log(`server running on port ${[port]}`));
+    app.listen(port, console.log(`server running on port ${port}`));
   })
   .catch((err) => console.log(err));
 
@@ -23,6 +24,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(morgan("dev"));
+app.use(helmet());
 
 app.get("/", (req, res) => {
   res.json({ message: "Hello 😁😁" });

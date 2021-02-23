@@ -56,6 +56,7 @@ module.exports = {
 
   // sign up
   signUp: async (req, res) => {
+    console.log(req.body);
     try {
       const { username, email, fullname, password } = req.body;
 
@@ -74,7 +75,7 @@ module.exports = {
       }).save();
 
       const token = createToken({ id: newUser._id });
-      res.json({ message: "register success ", id: newUser._id, token });
+      res.json({ message: "register success", id: newUser._id, token });
     } catch (err) {
       const errors = errorHandler(err);
       res.status(400).json({ errors });
